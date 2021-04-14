@@ -139,7 +139,7 @@ const LineChart = ({
           }}
         >
           {parseFloat(maximumYFromData * (((index)) / PARTS)).toFixed(precision)}
-          
+
         </text>
       );
     });
@@ -172,7 +172,7 @@ const LineChart = ({
           }}
         >
           {parseFloat(-(maximumYFromData * (((newIndex--)) / PARTS)).toFixed(precision))}
-         
+
         </text>
       );
     });
@@ -215,8 +215,8 @@ const LineChart = ({
         <line x1={`${padding + FONT_SIZE}`} y1="0" x2={`${padding + FONT_SIZE - 20}`} y2={`${padding + FONT_SIZE - 105}`} style={{ stroke: "green", strokeWidth: 5 }} />
         <line x1={`${padding + FONT_SIZE}`} y1="0" x2={`${padding + FONT_SIZE + 20}`} y2={`${padding + FONT_SIZE - 105}`} style={{ stroke: "green", strokeWidth: 5 }} />
 
-        <line x1={`${width*2}`} y1={`${height - padding}`} x2={`${(width*3) - (height-padding)-80}`} y2={`${height-padding - 20}`} style={{ stroke: "green", strokeWidth: 5 }} />
-        <line x1={`${width*2}`} y1={`${height - padding}`} x2={`${(width*3) - (height-padding)-80}`} y2={`${height-padding + 20}`} style={{ stroke: "green", strokeWidth: 5 }} />
+        <line x1={`${width * 2}`} y1={`${height - padding}`} x2={`${(width * 3) - (height - padding) - 80}`} y2={`${height - padding - 20}`} style={{ stroke: "green", strokeWidth: 5 }} />
+        <line x1={`${width * 2}`} y1={`${height - padding}`} x2={`${(width * 3) - (height - padding) - 80}`} y2={`${height - padding + 20}`} style={{ stroke: "green", strokeWidth: 5 }} />
 
         <polyline
           fill="none"

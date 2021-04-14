@@ -10,7 +10,8 @@ router.post('/', urlencoderParser, function (req, res, next) {
         if (err) throw err;
 
         const textFile = filenames.filter(el => el.indexOf(stationId) > -1 ? el : null);
-
+    
+       
         fs.readFile(`./public/txtFiles/${textFile[0]}`, 'utf8', function (err, data) {
             if (err) return err;
             var cells = data.split('\n').map(el => el.split(';'));
@@ -24,7 +25,7 @@ router.post('/', urlencoderParser, function (req, res, next) {
                 return obj;
             });
             var json = JSON.stringify(obj);
-            res.send(json);
+            res.send( json );
         })
     });
 });
