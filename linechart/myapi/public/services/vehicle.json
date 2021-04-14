@@ -1,0 +1,31 @@
+
+[{
+    "delay": 2,
+    "last_station_id" : 11112,
+    "last_station_name" : "LudwigsHöhe",
+    "vehicle_id": 101,
+    "destination" :  "Rüsselsheim Bahnhof", 
+    "line_id": 12,
+    "route_id": 1,
+    "route_name": "Rüsselsheim Platz - Rüsselsheim Bhanhof",
+    "line_name": "Linie 12",
+    "cycle_number": 2,
+    "gps_controller_id": 222,
+    "latitude" : 49.9915582,
+    "longitude":  8.4113495
+},
+{
+    "delay": 3,
+    "last_station_id" : 11113,
+    "last_station_name" : "Landskronstrasse",
+    "vehicle_id": 102,
+    "destination" :  "Rüsselsheim Bahnhof", 
+    "line_id": 12,
+    "route_id": 2,
+    "route_name": "Rüsselsheim Platz - Rüsselsheim Bhanhof",
+    "line_name": "Linie 12",
+    "cycle_number": 3,
+    "gps_controller_id": 223,
+    "latitude" : 49.9915582,
+    "longitude":  8.4113495
+}]
