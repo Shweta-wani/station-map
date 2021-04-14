@@ -6,6 +6,7 @@ import {LabelX, LabelY} from "./components/label";
 import AppContextProvider from "./context/appContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import SelectionStation from "./components/selectionStation";
 
 const styles = {
   chartComponentsContainer: {
@@ -22,6 +23,7 @@ function App() {
           <div className="row justify-content-center">
             <SelectionType />
             <SelectionYear />
+            <SelectionStation />
            </div>
           <LabelY />
             <LineChart

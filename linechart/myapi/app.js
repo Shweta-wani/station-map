@@ -8,6 +8,7 @@ var fs = require('fs');
 
 var indexRouter = require('./routes/index');
 var txtFileRouter = require('./routes/readtxtFile');
+var stationDetailRouter = require('./routes/stationDetail');
 
 var app = express();
 app.use(cors({origin:'http://localhost:8080'}));
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/txtfile', txtFileRouter);
+app.use('/stationDetail', stationDetailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

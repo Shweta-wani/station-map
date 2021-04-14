@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useApp } from "../context/appContext";
 const LineChart = ({
   height,
@@ -115,25 +114,6 @@ const LineChart = ({
     });
   };
 
-  const Circle = () => {
-    const circle = data
-      .map(element => {
-        const x = (element.x * 2 / maximumXFromData) * chartWidth + padding + FONT_SIZE;
-        const y =
-          (chartHeight - (element.y / (maximumYFromData)) * chartHeight) / 2 + padding;
-        return (
-          <circle
-            key={element.x}
-            cx={x ? x : null}
-            cy={y ? y : null}
-            r="4"
-            fill="red"
-            opacity='1' />
-        )
-      });
-    return circle ? circle : "";
-  }
-
   const LabelsYAxisPositive = () => {
     let PARTS = numberOfHorizontalGuides;
 
@@ -164,6 +144,7 @@ const LineChart = ({
       );
     });
   };
+
   const LabelsYAxisNegative = () => {
     let PARTS = numberOfHorizontalGuides;
     let newIndex = numberOfHorizontalGuides;
@@ -195,6 +176,25 @@ const LineChart = ({
         </text>
       );
     });
+  };
+
+  const Circle = () => {
+    const circle = data
+      .map(element => {
+        const x = (element.x * 2 / maximumXFromData) * chartWidth + padding + FONT_SIZE;
+        const y =
+          (chartHeight - (element.y / (maximumYFromData)) * chartHeight) / 2 + padding;
+        return (
+          <circle
+            key={element.x}
+            cx={x ? x : null}
+            cy={y ? y : null}
+            r="4"
+            fill="red"
+            opacity='1' />
+        )
+      });
+    return circle ? circle : "";
   };
 
   return (

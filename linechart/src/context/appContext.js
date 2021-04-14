@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import axios from "axios";
 
 const AppContext = createContext();
 
@@ -27,14 +28,22 @@ function AppContextProvider({ children }) {
     let [type, setType] = useState(optionsData[0].value);
     let [yearvalue, setYearValue] = useState(year[0].value);
     let [textX, setTextX] = useState(year[0].text);
+    let [stationsId, setStationsId] = useState(1);
+    let [stationsName, setStationsName] = useState('');
+    let [stations, setStations] = useState([]);
 
-    function jsonFile() {
+    function getFile() {
         const url = "http://localhost:3000/txtfile";
         let array = [];
-        fetch(url)
-            .then(response => response.json())
+        axios
+            .post(
+                url,
+                {stationsId},
+                { credentials: 'include' },
+                { withCredentials: true }
+            )
             .then(result => {
-                result.map((value, index) => {
+                result.data.map((value, index) => {
                     const newYear = Number(value.MESS_DATUM_BEGINN.toString().substring(0, 4));
                     if (newYear >= yearvalue && array.length < 10) {
                         return (
@@ -44,9 +53,33 @@ function AppContextProvider({ children }) {
                     }
                 });
                 setData(array);
-            }).catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"));
-
+            })
+            .catch(error => {
+                console.log("Fetching data error", error);
+                // this.setState({ showerror: true })
+            });
         return array;
+    }
+
+
+    function getStation() {
+        const url = "http://localhost:3000/stationDetail";
+            let array = [];
+            fetch(url)
+                .then(response => response.json())
+                .then(result => {
+                    result.map((value, index) => {
+                        if (array.length < 10) {
+                            return (
+                                array.push(
+                                    { stationsId: value.Stations_id, stationsName: value.Stationsname }
+                                ))
+                        }
+                    });
+                    setStations(array);
+                }).catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"));
+    
+            return array;
     }
 
     function selectYear(changedYear, yearText) {
@@ -58,19 +91,32 @@ function AppContextProvider({ children }) {
         setTextY(chagedTextY);
     }
 
+    function selectStaion(changedStationId, changedStationName) {
+        setStationsId(changedStationId);
+        setStationsName(changedStationName);
+    }
+
     useEffect(() => {
-        jsonFile();
-    }, [type, yearvalue]);
+        getFile();
+    }, [type, yearvalue, stationsId]);
+    
+    useEffect(() => {
+        getStation();
+    }, []);
 
     const value = {
         data,
-        jsonFile,
+        getFile,
         textY,
         textX,
         optionsData,
         year,
         selectYear,
-        selectType
+        selectType,
+        stations,
+        stationsId,
+        stationsName,
+        selectStaion
     }
 
     return (
