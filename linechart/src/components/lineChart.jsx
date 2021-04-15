@@ -1,5 +1,8 @@
 import React from "react";
 import { useApp } from "../context/appContext";
+
+//Line chart is creating with SVG 
+// working mainly with padding, height(complete height), width
 const LineChart = ({
   height,
   width,
@@ -23,12 +26,22 @@ const LineChart = ({
   const chartWidth = width - padding * 2;
   const chartHeight = height - padding * 2;
 
-  const points = data
+  //Points x and y for the linechart
+  //calculating x point with dividing maximum value in x and adding padding and fontsize
+  //same with y points, just the difference to minus chart height for reversing it.
+  const dataPoints = data
     .map(element => {
       const x = (element.x * 2 / maximumXFromData) * chartWidth + padding + FONT_SIZE;
       const y =
         (chartHeight - (element.y / (maximumYFromData)) * chartHeight) / 2 + padding;
-      return `${x},${y}`;
+      return ({ x, y })
+    });
+
+    // points for polyline
+  const points = dataPoints
+    .map(el => {
+      console.log()
+      return (`${el.x},${el.y}`)
     })
     .join(" ");
 
@@ -47,14 +60,18 @@ const LineChart = ({
     <Axis points={`${padding + FONT_SIZE},0 ${padding + FONT_SIZE},${height - padding}`} />
   );
 
-  const HorizontalGuidesPositive = () => {
+  //horizontal guides is dividing in negative and positive guides
+  //working with number of horizontal lines
+  //adding 1 to positive guides for number 0
+
+  const HorizontalGuides = (newChartHeight) => {
     const startX = padding + FONT_SIZE;
     const endX = width * 2;
 
     return new Array(numberOfHorizontalGuides).fill(0).map((_, index) => {
       let ratio = 0;
       ratio = ((index + 1) / 2) / numberOfHorizontalGuides;
-      const yCoordinate = (chartHeight / 2 - chartHeight * ratio + padding);
+      const yCoordinate = (newChartHeight.chartHeight - chartHeight * ratio + padding);
 
       return (
         <React.Fragment key={index}>
@@ -68,28 +85,14 @@ const LineChart = ({
       );
     });
   };
-  const HorizontalGuidesNigative = () => {
-    const startX = padding + FONT_SIZE;
-    const endX = width * 2;
 
-    return new Array(numberOfHorizontalGuides).fill(0).map((_, index) => {
-      let ratio = 0;
-      ratio = ((index + 1) / 2) / numberOfHorizontalGuides;
+  const HorizontalGuidesPositive = () => (
+    <HorizontalGuides chartHeight={chartHeight / 2}></HorizontalGuides>
+  );
 
-      const yCoordinate = (chartHeight - chartHeight * ratio + padding);
-
-      return (
-        <React.Fragment key={index}>
-          <polyline
-            fill="none"
-            stroke={"#ccc"}
-            strokeWidth=".5"
-            points={`${startX},${yCoordinate} ${endX},${yCoordinate}`}
-          />
-        </React.Fragment>
-      );
-    });
-  };
+  const HorizontalGuidesNigative = () => (
+    <HorizontalGuides chartHeight={chartHeight}></HorizontalGuides>
+  );
 
   const LabelsXAxis = () => {
     const y = height - padding + FONT_SIZE * 2;
@@ -114,38 +117,7 @@ const LineChart = ({
     });
   };
 
-  const LabelsYAxisPositive = () => {
-    let PARTS = numberOfHorizontalGuides;
-
-    if (-minimumYFromData > maximumYFromData) {
-      maximumYFromData = -minimumYFromData;
-    }
-
-    return new Array((PARTS + 1)).fill(0).map((_, index) => {
-      const x = FONT_SIZE;
-      const ratio = (index / 2) / numberOfHorizontalGuides;
-
-      const yCoordinate =
-        chartHeight / 2 - chartHeight * ratio + padding + FONT_SIZE / 2;
-      return (
-        <text
-          key={index}
-          x={x}
-          y={yCoordinate}
-          style={{
-            fill: "#fff",
-            fontSize: FONT_SIZE,
-            fontFamily: "Helvetica"
-          }}
-        >
-          {parseFloat(maximumYFromData * (((index)) / PARTS)).toFixed(precision)}
-
-        </text>
-      );
-    });
-  };
-
-  const LabelsYAxisNegative = () => {
+  const LabelsYAxis = (parts) => {
     let PARTS = numberOfHorizontalGuides;
     let newIndex = numberOfHorizontalGuides;
 
@@ -153,13 +125,13 @@ const LineChart = ({
       maximumYFromData = -minimumYFromData;
     }
 
-    return new Array((PARTS)).fill(0).map((_, index) => {
-
+    return new Array((PARTS + parts.increaseParts)).fill(0).map((_, index) => {
       const x = FONT_SIZE;
       const ratio = (index / 2) / numberOfHorizontalGuides;
+      const addIndex = parts.activeIndex ? newIndex-- : index;
 
       const yCoordinate =
-        chartHeight - chartHeight * ratio + padding + FONT_SIZE / 2;
+        parts.newChartHeight - chartHeight * ratio + padding + FONT_SIZE / 2;
       return (
         <text
           key={index}
@@ -171,24 +143,31 @@ const LineChart = ({
             fontFamily: "Helvetica"
           }}
         >
-          {parseFloat(-(maximumYFromData * (((newIndex--)) / PARTS)).toFixed(precision))}
-
+          {parts.activeIndex ? -(parseFloat(maximumYFromData * (((addIndex)) / PARTS)).toFixed(precision)) :
+            (parseFloat(maximumYFromData * (((addIndex)) / PARTS)).toFixed(precision))
+          }
         </text>
       );
     });
   };
 
+  const LabelsYAxisNegative = () => (
+    <LabelsYAxis increaseParts={0} newChartHeight={chartHeight} activeIndex={true}></LabelsYAxis>
+  );
+
+  const LabelsYAxisPositive = () => (
+    <LabelsYAxis increaseParts={1} newChartHeight={chartHeight / 2} activeIndex={false}></LabelsYAxis>
+  );
+
+  // circle uses the same points as polyline points
   const Circle = () => {
-    const circle = data
+    const circle = dataPoints
       .map(element => {
-        const x = (element.x * 2 / maximumXFromData) * chartWidth + padding + FONT_SIZE;
-        const y =
-          (chartHeight - (element.y / (maximumYFromData)) * chartHeight) / 2 + padding;
         return (
           <circle
             key={element.x}
-            cx={x ? x : null}
-            cy={y ? y : null}
+            cx={element.x ? element.x : null}
+            cy={element.y ? element.y : null}
             r="4"
             fill="red"
             opacity='1' />
@@ -226,7 +205,6 @@ const LineChart = ({
         />
       </svg>
     </div>
-
   );
 };
 

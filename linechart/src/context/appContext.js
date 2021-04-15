@@ -15,7 +15,6 @@ const optionsData = [
 ];
 
 function AppContextProvider({ children }) {
-
     let [data, setData] = useState([]);
     let [textY, setTextY] = useState(optionsData[0].text);
     let [type, setType] = useState(optionsData[0].value);
@@ -26,6 +25,9 @@ function AppContextProvider({ children }) {
     let [stations, setStations] = useState([]);
     let [year, setYear] = useState([]);
 
+    // this function is work for sending station_id to the api 
+    //and getting the response with json data according to the selected station
+    // also changes the year options according to the data in json file
     function getFile() {
         const url = "http://localhost:3000/txtfile";
         let array = [];
@@ -59,7 +61,6 @@ function AppContextProvider({ children }) {
             })
             .catch(error => {
                 console.log("Fetching data error", error);
-                // this.setState({ showerror: true })
             });
         return array;
     }
@@ -68,7 +69,7 @@ function AppContextProvider({ children }) {
         return Number(yearString.MESS_DATUM_BEGINN.toString().substring(0, 4));
     }
 
-
+    // fetching the station data
     function getStation() {
         const url = "http://localhost:3000/stationDetail";
         const urlFiles = "http://localhost:3000/stationDetail/files";

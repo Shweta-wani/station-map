@@ -9,11 +9,11 @@ function SelectionStation() {
     }
 
     const map = stations.map(element => {
-        return <option key={ element.stationsId} value={element.stationsId}>{ element.stationsName}</option>
+        return <option className="form-control" key={ element.stationsId} value={element.stationsId}>{ element.stationsName}</option>
     })
     return (
         <div className="form-group">
-            <select id="selectedStation" onChange={(e) => getType(e)} className="selctionType form-control col-sm-6 col-m-4 col-lg-4" aria-label="Default select example">
+            <select id="selectedStation" onChange={(e) => getType(e)} className="selctionType form-control col-4 col-sm-4 col-m-4 col-lg-4" aria-label="Default select example">
                 {map}
             </select>
         </div>

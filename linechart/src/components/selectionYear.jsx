@@ -13,7 +13,7 @@ function SelectionYear() {
     })
     return (
         <div className="form-group">
-            <select id="selectedYear" onChange={(e) => getYear(e)} className="selctionType form-control col-sm-6 col-m-4 col-lg-4">
+            <select id="selectedYear" onChange={(e) => getYear(e)} className="selctionType form-control col-4 col-sm-4 col-m-4 col-lg-4">
                 {map}
             </select>
         </div>
