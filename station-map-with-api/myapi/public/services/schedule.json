@@ -1,0 +1,113 @@
+
+    [
+        {
+            "schedule_time" : "12:20:30",
+            "route_name" : "Rüsselsheim",
+            "line_id" : 12,
+            "route_id" : 1,
+            "tour_number" : 1,
+            "stop_number" : "11111",
+            "date" : "2021-01-13",
+            "vehicle_id" : 101
+        },
+        {
+            "schedule_time" : "13:20:30",
+            "route_name" : "Rüsselsheim",
+            "line_id" : 12,
+            "route_id" : 1,
+            "tour_number" : 1,
+            "stop_number" : "11111",
+            "date" : "2021-01-13",
+            "vehicle_id" : 101
+        },
+        {
+            "schedule_time" : "14:20:30",
+            "route_name" : "Rüsselsheim",
+            "line_id" : 12,
+            "route_id" : 1,
+            "tour_number" : 1,
+            "stop_number" : "11111",
+            "date" : "2021-01-13",
+            "vehicle_id" : 101
+        },
+        {
+            "schedule_time" : "15:20:30",
+            "route_name" : "Rüsselsheim",
+            "line_id" : 12,
+            "route_id" : 1,
+            "tour_number" : 1,
+            "stop_number" : "11111",
+            "date" : "2021-01-13",
+            "vehicle_id" : 101
+        },
+        {
+            "schedule_time" : "16:20:30",
+            "route_name" : "Rüsselsheim",
+            "line_id" : 12,
+            "route_id" : 1,
+            "tour_number" : 1,
+            "stop_number" : "11111",
+            "date" : "2021-01-13",
+            "vehicle_id" : 101
+        },
+        {
+            "schedule_time" : "17:20:30",
+            "route_name" : "Rüsselsheim",
+            "line_id" : 12,
+            "route_id" : 1,
+            "tour_number" : 1,
+            "stop_number" : "11111",
+            "date" : "2021-01-13",
+            "vehicle_id" : 101
+        },
+        {
+            "schedule_time" : "12:20:30",
+            "route_name" : "Griessheim",
+            "line_id" : 9,
+            "route_id" : 2,
+            "tour_number" : 2,
+            "stop_number" : "11112",
+            "date" : "2021-01-13",
+            "vehicle_id" : 101
+        },
+        {
+            "schedule_time" : "13:20:30",
+            "route_name" : "Griessheim",
+            "line_id" : 9,
+            "route_id" : 2,
+            "tour_number" : 2,
+            "stop_number" : "11112",
+            "date" : "2021-01-13",
+            "vehicle_id" : 102
+        },
+        {
+            "schedule_time" : "14:20:30",
+            "route_name" : "Griessheim",
+            "line_id" : 9,
+            "route_id" : 2,
+            "tour_number" : 2,
+            "stop_number" : "11112",
+            "date" : "2021-01-13",
+            "vehicle_id" : 102
+        },
+        {
+            "schedule_time" : "15:20:30",
+            "route_name" : "Griessheim",
+            "line_id" : 9,
+            "route_id" : 2,
+            "tour_number" : 2,
+            "stop_number" : "11112",
+            "date" : "2021-01-13",
+            "vehicle_id" : 102
+        },
+        {
+            "schedule_time" : "14:20:30",
+            "route_name" : "Frankfurt",
+            "line_id" : 10,
+            "route_id" : 3,
+            "tour_number" : 3,
+            "stop_number" : "11113",
+            "date" : "2021-01-13",
+            "vehicle_id" : 102
+        }
+    ]

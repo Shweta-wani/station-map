@@ -1,0 +1,103 @@
+{
+    "schedules": [
+        {
+            "id": 19,
+            "description": "Fahrplan_2020_ab_15.12-19",
+            "path": "\/var\/www\/smartris_test\/uploads\/Fahrplan_ab_Dezember.zip",
+            "stored": "2019-11-28 09:15:01",
+            "loaded": "2019-11-28 09:15:27",
+            "is_active": 0,
+            "activate_on": "2019-12-15",
+            "activated": "2019-12-15 03:35:05",
+            "deactivated": "2020-01-22 03:35:07"
+        },
+        {
+            "id": 20,
+            "description": "Fahrplan_2020_ab_20_01_2020 ",
+            "path": "\/var\/www\/smartris_test\/uploads\/Fahrplan_ab_Januar.zip",
+            "stored": "2020-01-21 14:14:17",
+            "loaded": "2020-01-21 14:14:44",
+            "is_active": 0,
+            "activate_on": "2020-01-22",
+            "activated": "2020-01-22 03:35:07",
+            "deactivated": "2020-02-26 03:35:12"
+        },
+        {
+            "id": 21,
+            "description": "Fahrplan_2020_ab_26.02.2020",
+            "path": "\/var\/www\/smartris_test\/uploads\/Fahrplan_ab_Februar.zip",
+            "stored": "2020-02-25 06:35:17",
+            "loaded": "2020-02-25 06:35:54",
+            "is_active": 0,
+            "activate_on": "2020-02-26",
+            "activated": "2020-02-26 03:35:12",
+            "deactivated": "2020-03-26 09:26:04"
+        },
+        {
+            "id": 33,
+            "description": "Fahrplan ab 24.03.2020",
+            "path": "\/var\/www\/smartris_test\/uploads\/Fahrplan_ab_2020-03-24.zip",
+            "stored": "2020-03-25 10:38:53",
+            "loaded": "2020-03-25 10:39:13",
+            "is_active": 0,
+            "activate_on": "2020-03-26",
+            "activated": "2020-03-26 09:26:04",
+            "deactivated": "2020-04-22 03:35:04"
+        },
+        {
+            "id": 34,
+            "description": "Fahrplan ab 20.04.",
+            "path": "\/var\/www\/smartris_test\/uploads\/Fahrplan_ab_mitte_April.zip",
+            "stored": "2020-04-21 11:41:05",
+            "loaded": "2020-04-21 11:41:25",
+            "is_active": 0,
+            "activate_on": "2020-04-22",
+            "activated": "2020-04-22 03:35:04",
+            "deactivated": "2020-04-25 03:35:03"
+        },
+        {
+            "id": 35,
+            "description": "Fahrplan ab 25.04.",
+            "path": "\/var\/www\/smartris_test\/uploads\/Fahrplan_zum_Ende_April.zip",
+            "stored": "2020-04-21 11:42:11",
+            "loaded": "2020-04-21 11:42:30",
+            "is_active": 0,
+            "activate_on": "2020-04-25",
+            "activated": "2020-04-25 03:35:03",
+            "deactivated": "2020-05-23 03:35:08"
+        },
+        {
+            "id": 36,
+            "description": "seit 21.05.2020",
+            "path": "\/var\/www\/smartris_test\/uploads\/Fahrplan_Mai.zip",
+            "stored": "2020-05-22 09:35:25",
+            "loaded": "2020-05-22 09:35:44",
+            "is_active": 0,
+            "activate_on": "2020-05-23",
+            "activated": "2020-05-23 03:35:08",
+            "deactivated": "2020-06-24 03:35:07"
+        },
+        {
+            "id": 37,
+            "description": "Fahrplan ab 17.06.2020",
+            "path": "\/var\/www\/smartris_test\/uploads\/Fahrplan_ab_Juni_SMARTRIS.zip",
+            "stored": "2020-06-23 16:04:26",
+            "loaded": "2020-06-23 16:04:45",
+            "is_active": 0,
+            "activate_on": "2020-06-24",
+            "activated": "2020-06-24 03:35:07",
+            "deactivated": "2020-12-13 03:35:04"
+        },
+        {
+            "id": 38,
+            "description": "Fahrplan 2021 ab 13.12.2020",
+            "path": "\/var\/www\/smartris_test\/uploads\/Fahrplan_ab_Dezember_13_12_2020.zip",
+            "stored": "2020-12-02 12:39:35",
+            "loaded": "2020-12-02 12:39:55",
+            "is_active": 1,
+            "activate_on": "2020-12-13",
+            "activated": "2020-12-13 03:35:04",
+            "deactivated": null
+        }
+    ]
+}
