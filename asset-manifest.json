@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/LineChart/static/css/main.147f4c4b.chunk.css",
+    "main.js": "/LineChart/static/js/main.1c42608d.chunk.js",
+    "main.js.map": "/LineChart/static/js/main.1c42608d.chunk.js.map",
+    "runtime-main.js": "/LineChart/static/js/runtime-main.3f4213be.js",
+    "runtime-main.js.map": "/LineChart/static/js/runtime-main.3f4213be.js.map",
+    "static/css/2.003d442b.chunk.css": "/LineChart/static/css/2.003d442b.chunk.css",
+    "static/js/2.ecc94f90.chunk.js": "/LineChart/static/js/2.ecc94f90.chunk.js",
+    "static/js/2.ecc94f90.chunk.js.map": "/LineChart/static/js/2.ecc94f90.chunk.js.map",
+    "static/js/3.3c8c21b4.chunk.js": "/LineChart/static/js/3.3c8c21b4.chunk.js",
+    "static/js/3.3c8c21b4.chunk.js.map": "/LineChart/static/js/3.3c8c21b4.chunk.js.map",
+    "index.html": "/LineChart/index.html",
+    "static/css/2.003d442b.chunk.css.map": "/LineChart/static/css/2.003d442b.chunk.css.map",
+    "static/css/main.147f4c4b.chunk.css.map": "/LineChart/static/css/main.147f4c4b.chunk.css.map",
+    "static/js/2.ecc94f90.chunk.js.LICENSE.txt": "/LineChart/static/js/2.ecc94f90.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/LineChart/static/media/fontawesome-webfont.f691f37e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3f4213be.js",
+    "static/css/2.003d442b.chunk.css",
+    "static/js/2.ecc94f90.chunk.js",
+    "static/css/main.147f4c4b.chunk.css",
+    "static/js/main.1c42608d.chunk.js"
+  ]
+}
